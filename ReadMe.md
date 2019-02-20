@@ -1,10 +1,10 @@
 #Implementing a task Simulation on the Nios II 12sp2 <br /> 
 Code only includes the basic OS Files of the RTOS System and the files I modified.
 
-1.	Implementation Description:
+1.	Implementation Description: <br /> 
 The main objective of this project is to simulate tasks that run for both within and for certain period (c, p).
 
-(1)	Information
+(1)	Information <br /> 
 First, we set up the information we need for the Task simulation. We need to record the remaining time, response time, and actual start time, and the supposed starting time. We set this up in the structure OS_TCB.
 ![alt text](https://raw.githubusercontent.com/samuel40791765/RTOS-TaskSimulation/master/projectimages/pic1.png)
 
