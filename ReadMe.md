@@ -8,16 +8,16 @@ The main objective of this project is to simulate tasks that run for both within
 First, we set up the information we need for the Task simulation. We need to record the remaining time, response time, and actual start time, and the supposed starting time. We set this up in the structure OS_TCB.
 ![alt text](https://raw.githubusercontent.com/samuel40791765/RTOS-TaskSimulation/master/projectimages/pic1.png)
 
-(1)	Task_id is the ID number of the task
-(2)	Task_times is the number of time the task has computed
-(3)	Period is the period time of the task
-(4)	Compute is the computing time of the task
-(5)	Computing is a flag to determine if the task if currently computing or not
-(6)	TASK_SHOULD_START_TIME is the start of each period of the task
-(7)	TASK_ACTUAL_START_TIME is the time the task actually starts computing
-(8)	REMAINING_TIME is the remaining computation time the task has to compute
-(9)	RESPONSE_TIME is the difference between the time the task finishes computing and TASK_ACTUAL_START_TIME
-(10)	DEADLINE is the task’s deadline time
+(1)	Task_id is the ID number of the task <br /> 
+(2)	Task_times is the number of time the task has computed <br /> 
+(3)	Period is the period time of the task <br /> 
+(4)	Compute is the computing time of the task <br /> 
+(5)	Computing is a flag to determine if the task if currently computing or not<br /> 
+(6)	TASK_SHOULD_START_TIME is the start of each period of the task<br /> 
+(7)	TASK_ACTUAL_START_TIME is the time the task actually starts computing <br /> 
+(8)	REMAINING_TIME is the remaining computation time the task has to compute <br /> 
+(9)	RESPONSE_TIME is the difference between the time the task finishes computing and TASK_ACTUAL_START_TIME <br /> 
+(10)	DEADLINE is the task’s deadline time <br /> 
 
 After setting up, the task information should be initialized in OSTCBInit.
  
@@ -81,12 +81,13 @@ Task 2 experiences a deadline at TimeTick 24.
 
 3.	Pros and Cons <br /> 
 Pros: <br /> 
-(1)	The overall OS is more responsive as tasks that are deemed to be more important are processed first, resulting in a faster response time.
-(2)	More efficient and deadlines can be met easier if the time sets are arranged well enough.
-(3)	Infinite periods cannot block the system. Cons:
-(1)	If the computing time and period for different tasks are not set well enough, a deadline miss could easily be invoked.
-(2)	If a high priority task is not delayed long enough or takes too long computing, low priority tasks could easily be led to starvation.
-(3)	A lot harder to implement than Non-Preemptive kernels.
+(1)	The overall OS is more responsive as tasks that are deemed to be more important are processed first, resulting in a faster response time. <br /> 
+(2)	More efficient and deadlines can be met easier if the time sets are arranged well enough. <br /> 
+(3)	Infinite periods cannot block the system.  <br /> 
+Cons: <br /> 
+(1)	If the computing time and period for different tasks are not set well enough, a deadline miss could easily be invoked. <br /> 
+(2)	If a high priority task is not delayed long enough or takes too long computing, low priority tasks could easily be led to starvation. <br /> 
+(3)	A lot harder to implement than Non-Preemptive kernels. <br /> 
  
 4.	When to use preemptive kernels? <br /> 
 In multitasking environments where the response time for certain resources is vital, preemptive kernels should be used. Infinite loops also rarely occur, and preemptive kernels force tasks to be switched after a certain time limit.
